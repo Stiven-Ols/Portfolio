@@ -79,6 +79,30 @@ img {
 
 
 /* ======= REUSABLE CSS CLASSES ======= */
+.container {
+    max-width: 1024px;
+    margin-inline: 1.5rem;
+}
 
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
 
+.section{
+    padding-block: 5rem 1rem;
+}
+
+.section__title{
+   width: max-content; 
+   margin: 0 auto 2.5rem;
+   font-size: var(--h2-font-size);
+   font-weight: var(--font-semi-bold);
+   border-bottom: 2px solid var(--title-color);
+   padding-bottom: .75rem;
+}
 /* ======= RESUME ======= */
+
+
+
+/* ======= HEADER & NAV ======= */
