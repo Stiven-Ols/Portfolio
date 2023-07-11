@@ -239,6 +239,10 @@ img {
 }
 
 /* ============== ABOUT ============== */
+.about__container p {
+    text-align: justify;
+}
+
 .about__button {
     width: max-content;
     color: var(--title-color);
@@ -269,5 +273,13 @@ img {
     font-weight: var(--font-semi-bold);
 }
 /* ============== SKILLS ============== */
+.skills__content,
+.skills__list {
+    display: grid;
+}
 
+.skills__content {
+    grid-template-columns: repeat(2, max-content);
+    align-items: baseline;
+}
 /* ============== EDUCATION ============== */
