@@ -262,6 +262,7 @@ body.dark-theme {
 }
 
 .home__perfil {
+    /* width: 230px; */
     width: 200px;
     height: 270px;
     background: linear-gradient(132deg, 
