@@ -22,7 +22,7 @@
     --font-semi-bold: 600;
 
     /* ======= z index ======= */
-    --z-tooltio: 10;
+    --z-tooltip: 10;
     --z-fixed: 100;
 }
 
@@ -52,6 +52,7 @@ body {
     font-weight: var(--font-medium);
     background-color: var(--container-color);
     color: var(--text-color);
+    transition: background .4s;
 }
 
 h1,h2,h3,h4{
@@ -72,13 +73,42 @@ img {
     max-width: 100%;
     height: auto;
 }
-/* ======= THEME ======= */
+/* ============== THEME ============== */
+.change-theme {
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
 
+/* ============== Variables Dark theme ============== */
+body.dark-theme {
+    --title-color: hsl(40, 48%, 90%);
+    --text-color: hsl(40, 12%, 70%);
+    --body-color: hsl(40, 12%, 16%);
+    --container-color: hsl(40, 20%, 8%);
+}
 
-/* ======= Variables Dark theme ======= */
+.dark-theme :is(.nav__menu, .scrollup) {
+    background-color: hsl(40, 20%, 12%);
+}
 
+.dark-theme .home__profesion {
+    text-shadow: 0 0 6px hsl(40, 20%, 12%);
+}
 
-/* ======= REUSABLE CSS CLASSES ======= */
+.dark-theme::-webkit-scrollbar {
+    background-color: hsl(40, 16%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+    background-color: hsl(40, 16%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(40, 16%, 35%);
+}
+
+/* ============== REUSABLE CSS CLASSES ============== */
 .container {
     max-width: 1024px;
     margin-inline: 1.5rem;
@@ -101,11 +131,40 @@ img {
    border-bottom: 2px solid var(--title-color);
    padding-bottom: .75rem;
 }
-/* ======= RESUME ======= */
 
+/* ============== RESUME ============== */
+.resume__title {
+    font-size: var(--normal-font-size);
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .25rem;
+}
 
+.resume__title i {   
+    font-size: 1.5rem;
+    font-weight: initial;
+}
 
-/* ======= HEADER & NAV ======= */
+.resume__data {
+    display: grid;
+    row-gap: .5rem;
+    padding-left: 1.5rem;
+    font-size: var(--small-font-size);
+}
+
+.resume__button-link {
+    width: max-content;
+    color: var(--text-color);
+    display: inline-flex;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.resume__button-link:hover{
+    text-decoration: underline;
+}
+
+/* ============== HEADER & NAV ============== */
 .header {
     position: fixed;
     width: 100%;
@@ -113,6 +172,7 @@ img {
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
+    transition: background .4s;
 }
 
 .nav {
@@ -140,6 +200,7 @@ img {
         margin-inline: 1.5rem;
         border-radius: .5rem;
         padding: 1.25rem 3rem;
+        transition: background .4s;
     }
 }
 
@@ -172,7 +233,10 @@ img {
 }
 
 /* Actives Links */
-
+.active-link::after {
+    opacity: 1;
+    transform: translateY(-4px);
+}
 
 /* ============== HOME ============== */
 .home__container {
@@ -198,7 +262,7 @@ img {
 }
 
 .home__perfil {
-    width: 230px;
+    width: 200px;
     height: 270px;
     background: linear-gradient(132deg, 
                 hsl(45, 6%, 70%) 25%,
@@ -221,6 +285,7 @@ img {
     position: absolute;
     width: 50px;
     fill: var(--title-color);
+    transition: fill .4s;
 }
 
 .home__star-1 {
@@ -281,5 +346,104 @@ img {
 .skills__content {
     grid-template-columns: repeat(2, max-content);
     align-items: baseline;
+    column-gap: 3rem;
 }
+
+.skills__list {
+    row-gap: 1rem;
+}
+
+.skills__list li {
+    margin: 0;
+}
+
 /* ============== EDUCATION ============== */
+
+
+/* ============== WORK ============== */
+
+
+/* ============== CERTIFICATES ============== */
+
+
+/* ============== REFERENCES ============== */
+
+
+/* ============== FOOTER ============== */
+.footer {
+    padding-block: 2.5rem 8rem;
+}
+
+.footer__container {
+    border-top: 2px solid var(--title-color);
+    padding-top: 1.5rem;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    row-gap: 2.5rem;
+}
+
+.footer__title {
+    font-size: var(--normal-font-size);
+    margin-bottom: .5rem;
+}
+
+.footer__link,
+.footer__info {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+
+/* ============== SCROLL BAR ============== */
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(40, 16%, 75%);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: hsl(40, 16%, 65%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(40, 16%, 55%);
+}
+
+/* ============== SCROLL UP ============== */
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--container-color);
+    box-shadow: 0 4px 16px hsl(40, 48%, 4%, .15);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    border-radius: .25rem;
+    z-index: var(--z-tooltip);
+    transition: bottom .4s, transition .4s, background .4s;
+}
+
+.scrollup:hover {
+    transform: translateY(-.25rem);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+    bottom: 7rem;
+}
+
+/* ============== BREAKPOINTS ============== */
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
