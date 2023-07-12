@@ -540,14 +540,69 @@ body.dark-theme {
         margin-block: 3rem;
     }
 
+    .header {
+        border-radius: 20px;
+    }
+
     .resume {
         background-color: var(--container-color);
         box-shadow: 0 0 48px hsl(40, 48%, 12%, .2);
         margin-inline: auto;
-        transition: background .4;
+        transition: background .4s;
+        border-radius: 20px;
     }
 
     .resume__main {
         grid-template-columns: 376px 1fr;
+    }
+
+    .dark-theme .resume {
+        box-shadow: 0 0 48px hsl(40, 48%, 4%, .4);
+    }
+
+    .nav  {
+        height: calc(var(--header-height) + 1.5rem);
+        margin-inline: 1.5rem;
+    }
+
+    .home__name {
+        margin-bottom: .5rem;
+    }
+
+    .home__perfil {
+        width: 280px;
+        height: 320px;
+    }
+
+    .home__img {
+        width: 245px;
+    }
+
+    .home__star-1,
+    .home__star-2 {
+        width: 70px;
+    }
+
+    .home__star-1 {
+        left: 1rem;
+    }
+
+    .home__star-2 {
+        right: 1rem;
+        bottom: 10rem;
+    }
+
+    .home__profesion {
+        transform: translateY(-2rem);
+    }
+
+    .certificates__container,
+    .references__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__container {
+        margin-inline: 1.5rem;
+        padding-top: 2rem;
     }
 }
