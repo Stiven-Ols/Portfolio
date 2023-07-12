@@ -442,6 +442,34 @@ body.dark-theme {
 
 /* ============== BREAKPOINTS ============== */
 /* For small devices */
+@media screen and (max-width: 350px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .nav__menu {
+        padding-inline: 2rem;
+    }
+
+    .home__star-1 {
+        left: 40px;
+    }
+
+    .home__star-2 {
+        right: 1rem;
+        bottom: 8rem;
+    }
+
+    .skills__content {
+        grid-template-columns: max-content;
+        row-gap: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: max-content;
+        row-gap: 1.5rem;
+    }
+}
 
 
 /* For medium devices */
