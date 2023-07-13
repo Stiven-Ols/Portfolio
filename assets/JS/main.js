@@ -57,3 +57,11 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+// Contact Email
+// const emailSpan = document.getElementById("email");
+//     emailSpan.addEventListener("click", function() {
+//         const emailAddress = this.textContent;
+//         window.open("mailto:" + emailAddress, "_self");
+// });
